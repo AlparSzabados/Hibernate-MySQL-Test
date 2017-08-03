@@ -1,14 +1,13 @@
 package com.hibernate.cfg.entities;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
+import static javax.persistence.Persistence.createEntityManagerFactory;
 
 public class Connection {
-	private static final String PERSISTENCE_UNIT_NAME = "hibernate";
+    private static final String PERSISTENCE_UNIT_NAME = "hibernate";
 
-	public static EntityManager getConnection(){
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-		return factory.createEntityManager();
-	}
+    public static EntityManager getConnection() {
+        return createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
+    }
 }
