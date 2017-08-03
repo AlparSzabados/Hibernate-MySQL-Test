@@ -10,7 +10,6 @@ public class Connection {
 	
 	public static EntityManager getConnection(){
 		factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-		EntityManager em = factory.createEntityManager();
-		return em;
+		return factory.createEntityManager();
 	}
 }

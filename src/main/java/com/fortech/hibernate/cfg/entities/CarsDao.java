@@ -9,7 +9,9 @@ import java.util.List;
 
 public class CarsDao {
     public static final String DEFAULT_SELECT_QUERY = "SELECT u from Car u";
-    public static EntityManager entityManager = Connection.getConnection();
+    public static final EntityManager ENTITY_MANAGER = Connection.getConnection();
+
+    private static EntityTransaction transaction = ENTITY_MANAGER.getTransaction();
 
     public static List<Car> getAllCars() {
         Connection.getConnection().getTransaction().begin();
@@ -22,9 +24,9 @@ public class CarsDao {
     }
 
     public static void addNewCar(Car car) {
-        entityManager.getTransaction().begin();
-        entityManager.persist(car);
-        entityManager.getTransaction().commit();
+        ENTITY_MANAGER.getTransaction().begin();
+        ENTITY_MANAGER.persist(car);
+        ENTITY_MANAGER.getTransaction().commit();
     }
 
     public static Car createNewCar(String numberPlate, String ownerPin, String model, int manufacturingDate) {
@@ -33,20 +35,16 @@ public class CarsDao {
 
     public static void deleteCar(Car car) {
         if (car == null) return;
-        entityManager.getTransaction().begin();
-        entityManager.remove(entityManager.contains(car) ? car : entityManager.merge(car));
-        entityManager.getTransaction().commit();
+        transaction.begin();
+        ENTITY_MANAGER.remove(ENTITY_MANAGER.contains(car) ? car : ENTITY_MANAGER.merge(car));
+        transaction.commit();
     }
 
     public static void updateCar(Car car) {
         if (car == null) return;
-
-        car.setManufacturingDate(2013);
-        car.setOwnerPIN("333");
-        EntityTransaction tx = entityManager.getTransaction();
-        tx.begin();
-        entityManager.merge(car);
-        tx.commit();
+        ENTITY_MANAGER.getTransaction().begin();
+        ENTITY_MANAGER.merge(car);
+        ENTITY_MANAGER.getTransaction().commit();
     }
 
 }

@@ -1,11 +1,6 @@
 package com.fortech.hibernate.cfg.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table (name = "persoana")
@@ -62,12 +57,6 @@ public class Persoana {
 		Data_nastere = data_nastere;
 	}
 
-	@Override
-	public String toString() {
-		return "Persoana [Cnp=" + Cnp + ", Nume=" + Nume + ", Prenume=" + Prenume + ", Varsta=" + Varsta
-				+ ", Data_nastere=" + Data_nastere + ", cnp_parinte=" + cnp_parinte + "]";
-	}
-
 	public int getCnp() {
 		return Cnp;
 	}
@@ -84,7 +73,10 @@ public class Persoana {
 		this.cnp_parinte = cnp_parinte;
 	}
 
-
-
+	@Override
+	public String toString() {
+		return "Persoana [Cnp=" + Cnp + ", Nume=" + Nume + ", Prenume=" + Prenume + ", Varsta=" + Varsta
+				+ ", Data_nastere=" + Data_nastere + ", cnp_parinte=" + cnp_parinte + "]";
+	}
 
 }

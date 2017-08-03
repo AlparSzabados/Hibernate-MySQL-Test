@@ -8,19 +8,16 @@ public class Tester {
 
         Car deleteCar = CarsDao.getEntityById("CJ17LKL");
 
-        if (deleteCar != null) {
-            CarsDao.deleteCar(deleteCar);
-        }
-
-        printEntries();
+        CarsDao.deleteCar(deleteCar);
 
         Car newCar = CarsDao.createNewCar("CJ17LKL", "333", "Honda", 2007);
         CarsDao.addNewCar(newCar);
 
-        CarsDao.deleteCar(CarsDao.getEntityById("CJ17LKL"));
+        Car modifyCar = CarsDao.getEntityById("CJ17LKL");
+        modifyCar.setManufacturingDate(2000);
+        modifyCar.setModel("Opel Corsa D");
 
-        CarsDao.updateCar("CJ17LKL");
-
+        CarsDao.updateCar(modifyCar);
 
         printEntries();
 
