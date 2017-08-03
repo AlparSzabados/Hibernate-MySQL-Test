@@ -5,3 +5,4 @@ test.iml
 .settings/
 src/test/
 target/
+Hibernate-MySQL-Test.iml

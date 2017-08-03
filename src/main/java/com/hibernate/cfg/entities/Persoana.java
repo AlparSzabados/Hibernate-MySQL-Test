@@ -1,4 +1,4 @@
-package com.fortech.hibernate.cfg.entities;
+package com.hibernate.cfg.entities;
 
 import javax.persistence.*;
 
