@@ -5,7 +5,7 @@
                                 http://java.sun.com/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="hibernate">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>com.hibernate.cfg.entities.Persoana</class>
+		<class>com.hibernate.cfg.entities.Persons</class>
 		<class>com.hibernate.cfg.entities.Car</class>
 		<properties>
 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/hibernatetest" />
