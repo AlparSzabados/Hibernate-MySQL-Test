@@ -1,5 +1,7 @@
 package com.hibernate.cfg.entities;
 
+import com.hibernate.cfg.entities.Connection;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
@@ -13,10 +15,8 @@ public class CarsDao {
     private static final EntityTransaction TRANSACTION = ENTITY_MANAGER.getTransaction();
 
     public static List<Car> getAllCars() {
-        TRANSACTION.begin();
         Query selectAllQuery = ENTITY_MANAGER.createQuery(DEFAULT_SELECT_QUERY);
-        List<Car> resultList = selectAllQuery.getResultList();
-        return resultList;
+        return selectAllQuery.getResultList();
     }
 
     public static Car getEntityById(String id) {

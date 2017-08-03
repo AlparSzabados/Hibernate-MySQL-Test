@@ -20,9 +20,11 @@ public class Tester {
         CarsDao.updateCar(modifyCar);
 
         printEntries();
+
     }
 
     private static void printEntries() {
         CarsDao.getAllCars().forEach(System.out::println);
+
     }
 }

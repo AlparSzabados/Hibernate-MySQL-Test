@@ -6,10 +6,9 @@ import javax.persistence.Persistence;
 
 public class Connection {
 	private static final String PERSISTENCE_UNIT_NAME = "hibernate";
-	private static EntityManagerFactory factory;
-	
+
 	public static EntityManager getConnection(){
-		factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 		return factory.createEntityManager();
 	}
 }
