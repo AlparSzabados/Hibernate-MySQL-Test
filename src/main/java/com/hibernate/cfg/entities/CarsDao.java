@@ -1,10 +1,8 @@
 package com.hibernate.cfg.entities;
 
-import com.hibernate.cfg.entities.Connection;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 //ENTITY_MANAGER.createNativeQuery(arg0, arg1); pentru query uri mai complexe, cu join etc
@@ -15,7 +13,7 @@ public class CarsDao {
     private static final EntityTransaction TRANSACTION = ENTITY_MANAGER.getTransaction();
 
     public static List<Car> getAllCars() {
-        Query selectAllQuery = ENTITY_MANAGER.createQuery(DEFAULT_SELECT_QUERY);
+        TypedQuery<Car> selectAllQuery = ENTITY_MANAGER.createQuery(DEFAULT_SELECT_QUERY, Car.class);
         return selectAllQuery.getResultList();
     }
 
