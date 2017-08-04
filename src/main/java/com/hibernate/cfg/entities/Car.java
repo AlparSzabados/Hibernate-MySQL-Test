@@ -62,7 +62,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return String.format("Car [ownerSocialSecurityNumber=%s, marca=%s, an_fabricatie=%d, numar_inmatriculare=%s]", ownerPIN, model, manufacturingDate, numberPlate);
+        return String.format("Car{numberPlate='%s', ownerPIN=%d, model='%s', manufacturingDate=%d}", numberPlate, ownerPIN, model, manufacturingDate);
     }
-
 }
