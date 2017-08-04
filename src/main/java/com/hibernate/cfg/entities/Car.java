@@ -6,16 +6,16 @@ import javax.persistence.*;
 @Table(name = "car")
 public class Car {
     @Id
-    @Column(name = "numberPlate")
+    @Column(name = "number_plate")
     private String numberPlate;
 
-    @Column(name = "ownerPIN")
+    @Column(name = "owner_PIN")
     private int ownerPIN; //PersonalIdentificationNumber
 
     @Column(name = "model")
     private String model;
 
-    @Column(name = "manufacturingDate")
+    @Column(name = "manufacturing_date")
     private int manufacturingDate;
 
     public Car() {
