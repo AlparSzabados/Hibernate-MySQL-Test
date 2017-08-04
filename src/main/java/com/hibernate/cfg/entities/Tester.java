@@ -1,5 +1,8 @@
 package com.hibernate.cfg.entities;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Tester {
 
     public static void main(String[] args) {
@@ -10,7 +13,7 @@ public class Tester {
 
         CarsDao.deleteCar(deleteCar);
 
-        Car newCar = CarsDao.createNewCar("CJ17LKL", "333", "Honda", 2007);
+        Car newCar = CarsDao.createNewCar("CJ17LKL", 333, "Honda", 2007);
         CarsDao.addNewCar(newCar);
 
         Car modifyCar = CarsDao.getEntityById("CJ17LKL");
@@ -19,12 +22,18 @@ public class Tester {
 
         CarsDao.updateCar(modifyCar);
 
-        printEntries();
+        String leftOuterJoin = "SELECT p.firstName, p.lastName, c.model, c.numberPlate FROM Persons p LEFT JOIN Car c ON p.pin = c.ownerPIN";
+        List<Object[]> resultList = Connection.getConnection().createQuery(leftOuterJoin, Object[].class).getResultList();
+
+        resultList.stream()
+                  .map(Arrays::toString)
+                  .forEach(System.out::println);
+
+        printCarEntries();
 
     }
 
-    private static void printEntries() {
+    private static void printCarEntries() {
         CarsDao.getAllCars().forEach(System.out::println);
-
     }
 }
