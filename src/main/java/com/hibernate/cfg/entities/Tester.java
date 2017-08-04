@@ -22,7 +22,7 @@ public class Tester {
 
         CarsDao.updateCar(modifyCar);
 
-        String leftOuterJoin = "SELECT p.firstName, p.lastName, c.model, c.numberPlate FROM Persons p LEFT JOIN Car c ON p.pin = c.ownerPIN";
+        String leftOuterJoin = "SELECT p.firstName, p.lastName, c.model, c.numberPlate FROM Persons p LEFT JOIN Car c ON p.pin = c.ownerPin";
         List<Object[]> resultList = Connection.getConnection().createQuery(leftOuterJoin, Object[].class).getResultList();
 
         resultList.stream()

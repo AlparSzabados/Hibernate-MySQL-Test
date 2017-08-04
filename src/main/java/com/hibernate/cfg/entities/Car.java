@@ -9,8 +9,8 @@ public class Car {
     @Column(name = "number_plate")
     private String numberPlate;
 
-    @Column(name = "owner_PIN")
-    private int ownerPIN;
+    @Column(name = "owner_pin")
+    private int ownerPin;
 
     @Column(name = "car_model")
     private String model;
@@ -23,17 +23,17 @@ public class Car {
 
     public Car(String numberPlate, int ownerPersonalIdentificationNumber, String model, int manufacturingDate) {
         this.numberPlate = numberPlate;
-        this.ownerPIN = ownerPersonalIdentificationNumber;
+        this.ownerPin = ownerPersonalIdentificationNumber;
         this.model = model;
         this.manufacturingDate = manufacturingDate;
     }
 
-    public int getOwnerPIN() {
-        return ownerPIN;
+    public int getOwnerPin() {
+        return ownerPin;
     }
 
-    public void setOwnerPIN(int ownerSocialSecurityNumber) {
-        this.ownerPIN = ownerSocialSecurityNumber;
+    public void setOwnerPin(int ownerSocialSecurityNumber) {
+        this.ownerPin = ownerSocialSecurityNumber;
     }
 
     public String getModel() {
@@ -62,6 +62,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return String.format("Car{numberPlate='%s', ownerPIN=%d, model='%s', manufacturingDate=%d}", numberPlate, ownerPIN, model, manufacturingDate);
+        return String.format("Car{numberPlate='%s', ownerPIN=%d, model='%s', manufacturingDate=%d}", numberPlate, ownerPin, model, manufacturingDate);
     }
 }
