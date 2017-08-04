@@ -10,7 +10,7 @@ public class Car {
     private String numberPlate;
 
     @Column(name = "owner_PIN")
-    private int ownerPIN; //PersonalIdentificationNumber
+    private int ownerPIN;
 
     @Column(name = "model")
     private String model;
@@ -21,9 +21,9 @@ public class Car {
     public Car() {
     }
 
-    public Car(String numberPlate, int ownerPIN, String model, int manufacturingDate) {
+    public Car(String numberPlate, int ownerPersonalIdentificationNumber, String model, int manufacturingDate) {
         this.numberPlate = numberPlate;
-        this.ownerPIN = ownerPIN;
+        this.ownerPIN = ownerPersonalIdentificationNumber;
         this.model = model;
         this.manufacturingDate = manufacturingDate;
     }
