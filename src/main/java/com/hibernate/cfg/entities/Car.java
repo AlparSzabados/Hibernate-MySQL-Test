@@ -12,7 +12,7 @@ public class Car {
     @Column(name = "owner_PIN")
     private int ownerPIN;
 
-    @Column(name = "model")
+    @Column(name = "car_model")
     private String model;
 
     @Column(name = "manufacturing_date")
