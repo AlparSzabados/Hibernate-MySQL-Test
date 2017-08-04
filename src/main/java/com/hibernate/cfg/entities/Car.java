@@ -12,7 +12,7 @@ public class Car {
     private String numberPlate;
 
     @Column(name = "ownerPIN")
-    private String ownerPIN; //PersonalIdentificationNumber
+    private int ownerPIN; //PersonalIdentificationNumber
 
     @Column(name = "model")
     private String model;
@@ -23,18 +23,18 @@ public class Car {
     public Car() {
     }
 
-    public Car(String numberPlate, String ownerPIN, String model, int manufacturingDate) {
+    public Car(String numberPlate, int ownerPIN, String model, int manufacturingDate) {
         this.numberPlate = numberPlate;
         this.ownerPIN = ownerPIN;
         this.model = model;
         this.manufacturingDate = manufacturingDate;
     }
 
-    public String getOwnerPIN() {
+    public int getOwnerPIN() {
         return ownerPIN;
     }
 
-    public void setOwnerPIN(String ownerSocialSecurityNumber) {
+    public void setOwnerPIN(int ownerSocialSecurityNumber) {
         this.ownerPIN = ownerSocialSecurityNumber;
     }
 

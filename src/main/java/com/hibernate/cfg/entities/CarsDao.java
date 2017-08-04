@@ -29,7 +29,7 @@ public class CarsDao {
         TRANSACTION.commit();
     }
 
-    public static Car createNewCar(String numberPlate, String ownerPin, String model, int manufacturingDate) {
+    public static Car createNewCar(String numberPlate, int ownerPin, String model, int manufacturingDate) {
         return new Car(numberPlate, ownerPin, model, manufacturingDate);
     }
 
